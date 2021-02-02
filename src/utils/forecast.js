@@ -11,8 +11,12 @@ const forecast = (latitude,longitude,callback) =>{
         }
         else {
             // const data = JSON.parse(response.body);
-            callback(undefined,`It is look like ${body.current.weather_descriptions[0]} Outside`);
-            console.log("Temperature : ",body.current.temperature," But it's feel like ",body.current.feelslike);
+            // const message = `It is look like ${body.current.weather_descriptions[0]} Outside. Current Temprature : ${body.current.temperature}`
+            callback(undefined,{
+                weather_descriptions : body.current.weather_descriptions[0],
+                current_temperature: body.current.temperature,
+            });
+            // console.log("Temperature : ",body.current.temperature," But it's feel like ",body.current.feelslike);
         }    
     });
 }
