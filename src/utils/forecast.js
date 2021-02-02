@@ -10,13 +10,12 @@ const forecast = (latitude,longitude,callback) =>{
             callback('Unable to find location',undefined)
         }
         else {
-            // const data = JSON.parse(response.body);
-            // const message = `It is look like ${body.current.weather_descriptions[0]} Outside. Current Temprature : ${body.current.temperature}`
+            console.log(body);
             callback(undefined,{
                 weather_descriptions : body.current.weather_descriptions[0],
                 current_temperature: body.current.temperature,
+                datajson : body.location,
             });
-            // console.log("Temperature : ",body.current.temperature," But it's feel like ",body.current.feelslike);
         }    
     });
 }

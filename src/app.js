@@ -53,12 +53,12 @@ app.get("/weather", (req, res) => {
         if(error){
             return res.send({error})
         }
-        forecast(latitude,longitude,(error,{weather_descriptions,current_temperature}) => {
+        forecast(latitude,longitude,(error,{weather_descriptions,current_temperature,datajson}) => {
             if(error){
                 return res.send({error})
             }
             res.send({
-                forecast : `It is look like ${weather_descriptions} Outside. Current Temprature : ${current_temperature}`,
+                forecast : `It is look like ${weather_descriptions} Outside. Current Temprature : ${current_temperature}. \n ${JSON.stringify(datajson)}`,
                 location,
                 address : req.query.address,
             })
