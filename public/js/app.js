@@ -1,4 +1,4 @@
-console.log("Inside Public js directory");
+// console.log("Inside Public js directory");
 
 // fetch('http://puzzle.mead.io/puzzle').then((response)=>{
 //     response.json().then((data)=>{
